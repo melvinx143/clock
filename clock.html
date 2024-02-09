@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIGITAL CLOCK</title>
+</head>
+<link rel="stylesheet" href="./digital.css">
+    <body>
+    <div class="content_body">
+        <div class="body_content">
+            
+            <h1 style="color:blue">Today is</h1>
+            <h3 id="sizing"><br><span id="datez"></span> <span>Feb</span>
+            <span id="dayz"></span>
+            <p><span id="hr">00</span>:<span id="min">00</span>:<span id="sec">00</span>
+            <span id="zone">PM</span>
+        </p>
+        </h3>
+        </div>
+    </div>
+    <script>
+        let hr=document.getElementById('hr');
+        let min=document.getElementById('min');
+        let sec=document.getElementById('sec');
+        let dayz=document.getElementById('dayz');
+        let datez=document.getElementById('datez');
+        let zone=document.getElementById('zone');
+        function timer()
+        {
+let p=new Date;
+hr.textContent=p.getHours();
+min.textContent=p.getMinutes();
+sec.textContent=p.getSeconds();
+dayz.innerHTML=p.getFullYear();
+datez.textContent=p.getDate();
+if(hr.innerHTML>=12)
+{
+   zone.innerHTML='PM';
+}
+else{
+    zone.innerHTML='AM';
+}
+        }
+        setInterval(timer,1000);
+
+    </script>
+</body>
+</html>
